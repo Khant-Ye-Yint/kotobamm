@@ -1,3 +1,3 @@
-### KOTOBAMM
+# KOTOBAMM
 
-# Flashcard app for japese N5 and N4 learners.
+### Flashcard app for japese N5 and N4 learners.
