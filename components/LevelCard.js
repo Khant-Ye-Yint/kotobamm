@@ -9,6 +9,7 @@ const LevelCard = ({ img, alt, level, text }) => {
 	const activeBg = useColorModeValue('text.whiteHover', 'brand.300');
 	const shadow = useColorModeValue('sm', 'greenLg');
 	const activeShadow = useColorModeValue('smActive', 'greenLg');
+	const subTextColor = useColorModeValue('text.secondary', 'purple.100');
 
 	return (
 		<HStack
@@ -29,7 +30,7 @@ const LevelCard = ({ img, alt, level, text }) => {
 			cursor='pointer'
 		>
 			<VStack alignItems='start' spacing='0'>
-				<Box fontSize='sm' color='purple.100' fontFamily='body'>
+				<Box fontSize='sm' color={subTextColor} fontFamily='body'>
 					{text}
 				</Box>
 				<Box

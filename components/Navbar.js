@@ -1,4 +1,5 @@
 import { HStack, Box } from '@chakra-ui/react';
+import Link from 'next/link';
 
 import ThemeToggler from './ThemeToggler';
 
@@ -12,9 +13,11 @@ const Navbar = () => {
 			alignItems='center'
 			fontFamily='Montserrat'
 		>
-			<Box fontWeight='bold' fontSize='36' color='brand.100'>
-				kotobamm
-			</Box>
+			<Link href='/'>
+				<Box fontWeight='bold' fontSize='36' color='brand.100' cursor='pointer'>
+					kotobamm
+				</Box>
+			</Link>
 			<ThemeToggler />
 		</HStack>
 	);
