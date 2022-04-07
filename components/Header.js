@@ -15,6 +15,7 @@ const Header = ({ text, subText }) => {
 				fontWeight='bold'
 				fontFamily='heading'
 				color={fontColor}
+				textTransform='capitalize'
 			>
 				{text}
 			</Box>

@@ -1,27 +1,21 @@
-import { HStack, Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
+
+import { useRouter } from 'next/router';
 
 import Layout from '../../components/Layout';
 import Header from '../../components/Header';
 import ChapterCard from '../../components/ChapterCard';
 
-const index = () => {
+const Index = () => {
+	const router = useRouter();
+	const { level } = router.query;
+
 	return (
 		<Layout>
-			<Header text='Chapters' subText='Slow and steady win the race' />
-			{/* <HStack
-				justifyContent='space-between'
-				alignItems='center'
-				flexWrap='wrap'
-				spacing={{ base: '0px', lg: '200px' }}
-				my={{ base: '14', md: '24' }}
-				gap='9'
-			>
-				<ChapterCard text='1' />
-				<ChapterCard text='1' />
-				<ChapterCard text='1' />
-				<ChapterCard text='1' />
-				<ChapterCard text='1' />
-			</HStack> */}
+			<Header
+				text={`${level} Chapters`}
+				subText='Slow and steady win the race'
+			/>
 			<Grid
 				templateColumns={{
 					base: 'repeat(3, 1fr)',
@@ -47,4 +41,4 @@ const index = () => {
 	);
 };
 
-export default index;
+export default Index;
