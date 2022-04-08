@@ -13,7 +13,12 @@ const LevelCard = ({ img, alt, level, text }) => {
 	const subTextColor = useColorModeValue('text.secondary', 'purple.100');
 
 	return (
-		<Link href={`/chapters/${level}`} passHref={true}>
+		<Link
+			href={`/chapters/${level}`}
+			as={`/chapters/${level}`}
+			passHref={true}
+			shallow={true}
+		>
 			<HStack
 				p='8'
 				w='sm'

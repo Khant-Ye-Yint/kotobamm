@@ -3,12 +3,20 @@ import { useColorModeValue } from '@chakra-ui/react';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { motion } from 'framer-motion';
 
 const Layout = ({ children }) => {
 	const bg = useColorModeValue('text.white', 'background');
 
 	return (
-		<VStack minH='100vh' bg={bg}>
+		<VStack
+			minH='100vh'
+			bg={bg}
+			as={motion.div}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ delay: 0.3 }}
+		>
 			<Navbar />
 			<Box
 				w='full'

@@ -6,9 +6,13 @@ import Layout from '../../components/Layout';
 import Header from '../../components/Header';
 import ChapterCard from '../../components/ChapterCard';
 
-const Index = () => {
+import client from '../../util/contentfulClient';
+
+const Index = ({ data }) => {
 	const router = useRouter();
 	const { level } = router.query;
+
+	const { startCh, totalCh } = data[0].fields;
 
 	return (
 		<Layout>
@@ -16,6 +20,7 @@ const Index = () => {
 				text={`${level} Chapters`}
 				subText='Slow and steady win the race'
 			/>
+
 			<Grid
 				templateColumns={{
 					base: 'repeat(3, 1fr)',
@@ -25,20 +30,41 @@ const Index = () => {
 				gap={[8, 12, 16]}
 				my={{ base: '14', md: '24' }}
 			>
-				{Array.apply(null, { length: 20 }).map((e, i) => (
+				{Array.apply(null, { length: totalCh }).map((e, i) => (
 					<GridItem
 						w='100%'
 						justifyContent='center'
 						alignItems='center'
 						display='flex'
-						key={i}
+						key={startCh}
 					>
-						<ChapterCard text={i + 1} />
+						<ChapterCard text={+startCh + i} />
 					</GridItem>
 				))}
 			</Grid>
 		</Layout>
 	);
 };
+
+export async function getStaticPaths() {
+	const res = await client.getEntries({
+		content_type: 'level',
+	});
+
+	const paths = res.items.map((item) => ({
+		params: { level: item.fields.name },
+	}));
+
+	return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+	const res = await client.getEntries({
+		content_type: 'level',
+		'fields.name[match]': params.level,
+	});
+
+	return { props: { data: res.items } };
+}
 
 export default Index;
