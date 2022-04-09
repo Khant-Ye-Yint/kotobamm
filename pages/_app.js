@@ -5,6 +5,7 @@ import { AnimateSharedLayout } from 'framer-motion';
 
 import '@fontsource/inter/700.css';
 import '@fontsource/montserrat/700.css';
+import '@fontsource/padauk/700.css';
 
 function MyApp({ Component, pageProps }) {
 	return (
