@@ -2,11 +2,11 @@ import { Grid, GridItem } from '@chakra-ui/react';
 
 import { useRouter } from 'next/router';
 
-import Layout from '../../components/Layout';
-import Header from '../../components/Header';
-import ChapterCard from '../../components/ChapterCard';
+import Layout from '../components/Layout';
+import Header from '../components/Header';
+import ChapterCard from '../components/ChapterCard';
 
-import client from '../../util/contentfulClient';
+import client from '../util/contentfulClient';
 
 const Index = ({ data }) => {
 	const router = useRouter();
