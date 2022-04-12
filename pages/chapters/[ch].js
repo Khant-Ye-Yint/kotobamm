@@ -114,9 +114,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+	const level = params.ch >= 26 ? 'n4' : 'n5';
 	const res = await client.getEntries({
 		content_type: 'chapter',
 		'fields.chapter[match]': `ch${params.ch}`,
+		'fields.level[match]': `${level}`,
 		order: 'sys.createdAt',
 	});
 
