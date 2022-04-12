@@ -13,7 +13,7 @@ const Navbar = () => {
 			alignItems='center'
 			fontFamily='Montserrat'
 		>
-			<Link href='/'>
+			<Link href='/' passHref={true}>
 				<Box fontWeight='bold' fontSize='36' color='brand.100' cursor='pointer'>
 					kotobamm
 				</Box>

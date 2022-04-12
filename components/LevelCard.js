@@ -30,6 +30,7 @@ const LevelCard = ({ img, alt, level, text }) => {
 				shadow={shadow}
 				borderRadius='20px'
 				cursor='pointer'
+				userSelect='none'
 			>
 				<VStack alignItems='start' spacing='0'>
 					<Box fontSize='sm' color={subTextColor} fontFamily='body'>

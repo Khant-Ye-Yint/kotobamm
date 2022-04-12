@@ -6,7 +6,7 @@ const Header = ({ text, subText }) => {
 
 	return (
 		<VStack
-			mt={{ base: '0', md: '10', lg: '16' }}
+			mt={{ base: '0', md: '10' }}
 			spacing='8px'
 			alignItems={{ base: 'flex-start', md: 'center' }}
 		>

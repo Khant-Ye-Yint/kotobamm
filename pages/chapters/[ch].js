@@ -4,6 +4,8 @@ import { Grid, GridItem, Box, Divider, HStack } from '@chakra-ui/react';
 
 import Layout from '../../components/Layout';
 import Header from '../../components/Header';
+import LinkCard from '../../components/LinkCard';
+import BackLink from '../../components/BackLink';
 
 import client from '../../util/contentfulClient';
 
@@ -11,9 +13,13 @@ const Chapter = ({ data }) => {
 	const router = useRouter();
 	const { ch } = router.query;
 
+	const level = ch >= 26 ? 'n4' : 'n5';
+
 	return (
 		<Layout>
+			<BackLink href={`/${level}`} />
 			<Header text={`Chapter ${ch}`} subText='You can do it, we believe you' />
+			<LinkCard text='Flashcard' href={`/flashcard/${ch}`} />
 			<HStack justifyContent='center' alignItems='center'>
 				<Grid
 					templateColumns={'repeat(2, 1fr)'}

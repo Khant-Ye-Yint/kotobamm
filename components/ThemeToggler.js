@@ -25,6 +25,7 @@ const ThemeToggler = () => {
 			borderRadius='10'
 			shadow={shadow}
 			cursor='pointer'
+			userSelect='none'
 			_hover={{
 				bg: hoverBg,
 			}}
@@ -33,7 +34,6 @@ const ThemeToggler = () => {
 				bg: activeBg,
 			}}
 			onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
-			transition
 		>
 			{colorMode === 'light' ? <FaMoon size={32} /> : <FaSun size={32} />}
 		</Flex>

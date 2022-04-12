@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import ChapterCard from '../components/ChapterCard';
+import BackLink from '../components/BackLink';
 
 import client from '../util/contentfulClient';
 
@@ -16,11 +17,11 @@ const Index = ({ data }) => {
 
 	return (
 		<Layout>
+			<BackLink href='/' />
 			<Header
 				text={`${level} Chapters`}
 				subText='Slow and steady win the race'
 			/>
-
 			<Grid
 				templateColumns={{
 					base: 'repeat(3, 1fr)',

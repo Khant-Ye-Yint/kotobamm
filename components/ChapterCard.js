@@ -10,13 +10,14 @@ const ChapterCard = ({ text }) => {
 	const activeShadow = useColorModeValue('smActive', 'greenLg');
 
 	return (
-		<Link href={`/chapters/${text}`}>
+		<Link href={`/chapters/${text}`} passHref={true}>
 			<Stack
 				w='24'
 				h='24'
 				justifyContent='center'
 				alignItems='center'
 				bg={bg}
+				userSelect='none'
 				_hover={{
 					bg: hoverBg,
 				}}
