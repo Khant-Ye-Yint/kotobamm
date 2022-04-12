@@ -5,7 +5,12 @@ import Link from 'next/link';
 
 const BackLink = ({ href }) => {
 	return (
-		<HStack userSelect='none' justifyContent='left' alignItems='center'>
+		<HStack
+			userSelect='none'
+			justifyContent='left'
+			alignItems='center'
+			mb={'5'}
+		>
 			<Link href={href} passHref={true}>
 				<HStack
 					cursor='pointer'
