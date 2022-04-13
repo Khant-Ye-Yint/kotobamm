@@ -15,6 +15,36 @@ const Chapter = ({ data }) => {
 
 	const level = ch >= 26 ? 'n4' : 'n5';
 
+	const Row = ({ japanese, myanmar }) => (
+		<>
+			<GridItem
+				w='100%'
+				justifyContent='center'
+				alignItems='center'
+				display='flex'
+			>
+				<Box textAlign='left' w='full'>
+					{japanese}
+				</Box>
+			</GridItem>
+			<GridItem
+				w='100%'
+				justifyContent='cenetr'
+				alignItems='ceneter'
+				display='flex'
+				flexDirection='row'
+				fontFamily='myan'
+			>
+				<Box textAlign='left' w='full'>
+					{myanmar}
+				</Box>
+			</GridItem>
+			<GridItem colSpan={2} mb='5'>
+				<Divider borderColor={'text.secondary'} w={'full'} />
+			</GridItem>
+		</>
+	);
+
 	return (
 		<Layout>
 			<BackLink href={`/${level}`} />
@@ -67,34 +97,12 @@ const Chapter = ({ data }) => {
 					<GridItem colSpan={2} mb='5'>
 						<Divider borderColor={'text.secondary'} w={'full'} />
 					</GridItem>
-					{data.map((chunk) => (
-						<>
-							<GridItem
-								w='100%'
-								justifyContent='center'
-								alignItems='center'
-								display='flex'
-							>
-								<Box textAlign='left' w='full'>
-									{chunk.fields.japanese}
-								</Box>
-							</GridItem>
-							<GridItem
-								w='100%'
-								justifyContent='cenetr'
-								alignItems='ceneter'
-								display='flex'
-								flexDirection='row'
-								fontFamily='myan'
-							>
-								<Box textAlign='left' w='full'>
-									{chunk.fields.myanmar}
-								</Box>
-							</GridItem>
-							<GridItem colSpan={2} mb='5'>
-								<Divider borderColor={'text.secondary'} w={'full'} />
-							</GridItem>
-						</>
+					{data.map((chunk, i) => (
+						<Row
+							japanese={chunk.fields.japanese}
+							myanmar={chunk.fields.myanmar}
+							key={i}
+						/>
 					))}
 				</Grid>
 			</HStack>

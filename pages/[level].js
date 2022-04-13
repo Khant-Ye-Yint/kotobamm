@@ -37,7 +37,7 @@ const Index = ({ data }) => {
 						justifyContent='center'
 						alignItems='center'
 						display='flex'
-						key={startCh}
+						key={i}
 					>
 						<ChapterCard text={+startCh + i} />
 					</GridItem>

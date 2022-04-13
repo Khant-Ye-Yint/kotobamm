@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import { Box, HStack } from '@chakra-ui/react';
+import { Box, HStack, Progress } from '@chakra-ui/react';
+import { useColorModeValue } from '@chakra-ui/react';
 
 import { useState } from 'react';
 
@@ -22,6 +23,8 @@ const FalshCardPage = ({ data }) => {
 	const [current, setCurrent] = useState(0);
 	const length = data.length;
 
+	const prograssBarColor = useColorModeValue('green', 'brand');
+
 	const next = () => {
 		setCurrent(current === length - 1 ? current : current + 1);
 	};
@@ -30,9 +33,21 @@ const FalshCardPage = ({ data }) => {
 		setCurrent(current === 0 ? current : current - 1);
 	};
 
+	let percentage = (current / data.length) * 100;
+
 	return (
 		<Layout>
 			<BackLink href={`/chapters/${ch}`} />
+			<Box px={{ base: '0', md: '96' }}>
+				<Progress
+					rounded='md'
+					size='md'
+					height='8px'
+					value={percentage}
+					colorScheme={prograssBarColor}
+					bg='text.secondary'
+				/>
+			</Box>
 			<Box>
 				{data.map((chunk, id) => (
 					<div key={id}>
@@ -51,7 +66,6 @@ const FalshCardPage = ({ data }) => {
 				fontSize='md'
 				fontFamily='heading'
 				px={{ base: '0', md: '96' }}
-				mt='20'
 			>
 				<HStack
 					cursor='pointer'

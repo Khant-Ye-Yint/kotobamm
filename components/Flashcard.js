@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 
 import { useState } from 'react';
 
+import styles from './Flashcard.module.css';
+import classNames from 'classnames';
+
 const Flashcard = ({ japanese, myanmar }) => {
 	const [flip, setFlip] = useState(false);
 
@@ -21,10 +24,20 @@ const Flashcard = ({ japanese, myanmar }) => {
 		hidden: { opacity: 0, scale: 0.7 },
 	};
 
-	return (
-		<Stack justifyContent='center' alignItems='center' mt='36'>
+	let containClass = classNames({
+		[styles.card]: !flip,
+		[styles.flipCard]: flip,
+	});
+
+	const Card = ({ text, front }) => {
+		let cardClass = classNames({
+			[styles.front]: front,
+			[styles.back]: !front,
+		});
+
+		return (
 			<Stack
-				as={motion.div}
+				// as={motion.div}
 				width='2xs'
 				height='2xs'
 				justifyContent='center'
@@ -35,6 +48,7 @@ const Flashcard = ({ japanese, myanmar }) => {
 				cursor='pointer'
 				color={color}
 				bg={bg}
+				position='absolute'
 				_hover={{
 					bg: hoverBg,
 				}}
@@ -42,11 +56,11 @@ const Flashcard = ({ japanese, myanmar }) => {
 					shadow: activeShadow,
 					bg: activeBg,
 				}}
-				onClick={toggleFlip}
-				initial='hidden'
-				animate='visible'
-				variants={variants}
-				transitionDuration='0.5s'
+				// initial='hidden'
+				// animate='visible'
+				// variants={variants}
+				// transitionDuration='0.5s'
+				className={cardClass}
 			>
 				<Box
 					fontFamily='myan'
@@ -55,10 +69,33 @@ const Flashcard = ({ japanese, myanmar }) => {
 					p='5'
 					textAlign='center'
 				>
-					{flip ? myanmar : japanese}
+					{text}
 				</Box>
 			</Stack>
-		</Stack>
+		);
+	};
+
+	return (
+		<Box
+			as={motion.div}
+			initial='hidden'
+			animate='visible'
+			variants={variants}
+			transitionDuration='0.5s'
+		>
+			<Stack
+				justifyContent='center'
+				alignItems='center'
+				mt='44'
+				mb='44'
+				position='relative'
+				onClick={toggleFlip}
+				className={containClass}
+			>
+				<Card text={japanese} front={true} />
+				<Card text={myanmar} />
+			</Stack>
+		</Box>
 	);
 };
 

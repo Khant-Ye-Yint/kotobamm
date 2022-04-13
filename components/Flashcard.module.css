@@ -1,0 +1,27 @@
+.card {
+	position: relative;
+	transition: transform 0.5s linear;
+	transform-style: preserve-3d;
+}
+
+.flipCard {
+	position: relative;
+	transition: transform 0.5s linear;
+	transform-style: preserve-3d;
+	transform: rotateY(180deg);
+}
+
+.front {
+	z-index: 2;
+	backface-visibility: hidden;
+}
+
+.back {
+	z-index: 1;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+
+.container {
+	perspective: 1000px;
+}
