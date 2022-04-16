@@ -46,7 +46,7 @@ const LevelCard = ({ img, alt, level, text }) => {
 						{level}
 					</Box>
 				</VStack>
-				<Image src={img} width='90px' height='90px' alt={alt} />
+				<Image src={img} width='90px' height='90px' alt={alt} priority />
 			</HStack>
 		</Link>
 	);

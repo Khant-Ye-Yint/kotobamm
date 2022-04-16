@@ -5,6 +5,7 @@ const theme = extendTheme({
 		heading: 'Montserrat',
 		body: 'Inter',
 		myan: 'Padauk',
+		lobster: 'Lobster',
 	},
 	colors: {
 		text: {

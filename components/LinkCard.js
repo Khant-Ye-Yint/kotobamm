@@ -15,7 +15,6 @@ const LinkCard = ({ text, href }) => {
 		<Stack
 			justifyContent='center'
 			alignItems={{ base: 'flex-start', md: 'center' }}
-			mt='4'
 		>
 			<Link href={href} passHref={true}>
 				<Box

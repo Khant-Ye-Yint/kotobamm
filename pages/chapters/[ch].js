@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { Grid, GridItem, Box, Divider, HStack } from '@chakra-ui/react';
+import { Grid, GridItem, Box, Divider, HStack, VStack } from '@chakra-ui/react';
 
 import Layout from '../../components/Layout';
 import Header from '../../components/Header';
@@ -48,8 +48,13 @@ const Chapter = ({ data }) => {
 	return (
 		<Layout>
 			<BackLink href={`/${level}`} />
-			<Header text={`Chapter ${ch}`} subText='You can do it, we believe you' />
-			<LinkCard text='Flashcard' href={`/flashcard/${ch}`} />
+			<VStack spacing='12px'>
+				<Header
+					text={`Chapter ${ch}`}
+					subText='You can do it, we believe you'
+				/>
+				<LinkCard text='Flashcard' href={`/flashcard/${ch}`} />
+			</VStack>
 			<HStack justifyContent='center' alignItems='center'>
 				<Grid
 					templateColumns={'repeat(2, 1fr)'}

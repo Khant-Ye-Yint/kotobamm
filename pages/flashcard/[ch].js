@@ -26,7 +26,12 @@ const FalshCardPage = ({ data }) => {
 	const prograssBarColor = useColorModeValue('green', 'brand');
 
 	const next = () => {
-		setCurrent(current === length - 1 ? current : current + 1);
+		if (current === length - 1) {
+			setCurrent(current);
+			router.push(`/finish/${ch}`);
+		} else {
+			setCurrent(current + 1);
+		}
 	};
 
 	const previous = () => {
@@ -66,16 +71,19 @@ const FalshCardPage = ({ data }) => {
 				fontSize='md'
 				fontFamily='heading'
 				px={{ base: '0', md: '96' }}
+				flexDirection={current !== 0 ? 'row' : 'row-reverse'}
 			>
-				<HStack
-					cursor='pointer'
-					userSelect='none'
-					_hover={{ color: 'text.secondary' }}
-					onClick={previous}
-				>
-					<MdOutlineArrowBackIos size={23} />
-					<Box>Previous</Box>
-				</HStack>
+				{current !== 0 && (
+					<HStack
+						cursor='pointer'
+						userSelect='none'
+						_hover={{ color: 'text.secondary' }}
+						onClick={previous}
+					>
+						<MdOutlineArrowBackIos size={23} />
+						<Box>Previous</Box>
+					</HStack>
+				)}
 				<HStack
 					cursor='pointer'
 					userSelect='none'
