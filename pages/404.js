@@ -19,6 +19,7 @@ const ErrorPage = () => {
 						alt='finish'
 						width='480'
 						height='319'
+						priority
 					/>
 				</HStack>
 				<Box

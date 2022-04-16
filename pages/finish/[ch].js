@@ -20,7 +20,13 @@ const FinishPage = () => {
 					alignItems='center'
 					mt={{ base: '10', md: '20' }}
 				>
-					<Image src='/img/finish.svg' alt='finish' width='480' height='319' />
+					<Image
+						src='/img/finish.svg'
+						alt='finish'
+						width='480'
+						height='319'
+						priority
+					/>
 				</HStack>
 				<Box
 					fontWeight='extrabold'
