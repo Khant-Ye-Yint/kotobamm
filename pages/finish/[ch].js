@@ -33,6 +33,7 @@ const FinishPage = () => {
 					fontSize='5xl'
 					color='brand.100'
 					fontFamily='lobster'
+					textAlign='center'
 				>
 					Yay, you did it!
 				</Box>

@@ -27,8 +27,9 @@ const ErrorPage = () => {
 					fontSize='5xl'
 					color='brand.100'
 					fontFamily='lobster'
+					textAlign='center'
 				>
-					We don&apos;t have what you looking for.
+					We don&apos;t have what you are looking for.
 				</Box>
 				<HStack justifyContent='center' alignItems='center' spacing='10'>
 					<LinkCard text='Go to home' href='/' />

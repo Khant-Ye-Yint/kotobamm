@@ -48,7 +48,7 @@ const Chapter = ({ data }) => {
 	return (
 		<Layout>
 			<BackLink href={`/${level}`} />
-			<VStack spacing='12px'>
+			<VStack spacing='12px' alignItems={{ base: 'start', md: 'center' }}>
 				<Header
 					text={`Chapter ${ch}`}
 					subText='You can do it, we believe you'
