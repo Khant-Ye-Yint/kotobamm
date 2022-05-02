@@ -65,7 +65,7 @@ export async function getStaticProps({ params }) {
 		'fields.name[match]': params.level,
 	});
 
-	return { props: { data: res.items } };
+	return { props: { data: res.items }, revalidate: 60 };
 }
 
 export default Index;
