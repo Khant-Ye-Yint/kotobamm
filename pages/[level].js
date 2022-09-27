@@ -26,7 +26,9 @@ const Index = ({ data }) => {
 				templateColumns={{
 					base: 'repeat(3, 1fr)',
 					md: 'repeat(4, 1fr)',
-					lg: 'repeat(9, 1fr)',
+					lg: 'repeat(5, 1fr)',
+					xl: 'repeat(6, 1fr)',
+					'2xl': 'repeat(8, 1fr)',
 				}}
 				gap={[8, 12, 16]}
 				my={{ base: '14', md: '24' }}

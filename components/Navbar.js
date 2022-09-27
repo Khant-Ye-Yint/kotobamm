@@ -8,7 +8,7 @@ const Navbar = () => {
 		<HStack
 			w='full'
 			h='10vh'
-			px={{ base: '5', md: '16', lg: '64' }}
+			px={{ base: '5', md: '16', lg: '24', xl: '28', '2xl': '44' }}
 			justifyContent='space-between'
 			alignItems='center'
 			fontFamily='Montserrat'

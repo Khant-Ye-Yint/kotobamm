@@ -15,7 +15,7 @@ const Home = () => {
 				justifyContent='center'
 				alignItems='center'
 				flexWrap='wrap'
-				spacing={{ base: '0px', lg: '200px' }}
+				// spacing={{ base: '0px', lg: '200px' }}
 				my={{ base: '14', md: '24' }}
 				gap='9'
 			>
