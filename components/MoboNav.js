@@ -20,8 +20,13 @@ const MoboNav = ({ setShow }) => {
 			alignItems='center'
 			gap='3'
 		>
-			<NavLink text='Home' link='/' onClick={() => setShow(false)} />
-			<NavLink text='About' link='/aboutMe' onClick={() => setShow(false)} />
+			<Box onClick={() => setShow(false)}>
+				<NavLink text='Home' link='/' />
+			</Box>
+			<Box onClick={() => setShow(false)}>
+				<NavLink text='About' link='/aboutMe' />
+			</Box>
+
 			<ThemeToggler />
 			<Center
 				pos='absolute'
