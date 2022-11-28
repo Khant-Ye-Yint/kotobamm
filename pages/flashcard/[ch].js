@@ -43,7 +43,7 @@ const FalshCardPage = ({ data }) => {
 	return (
 		<Layout>
 			<BackLink href={`/chapters/${ch}`} />
-			<Box px={{ base: '0', md: '96' }}>
+			<Box px={{ base: '0', md: '72' }}>
 				<Progress
 					rounded='md'
 					size='md'
@@ -70,7 +70,7 @@ const FalshCardPage = ({ data }) => {
 				alignItems='center'
 				fontSize='md'
 				fontFamily='heading'
-				px={{ base: '0', md: '96' }}
+				px={{ base: '0', md: '72' }}
 				flexDirection={current !== 0 ? 'row' : 'row-reverse'}
 			>
 				{current !== 0 && (

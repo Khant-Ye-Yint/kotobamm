@@ -28,9 +28,9 @@ const Index = ({ data }) => {
 					md: 'repeat(4, 1fr)',
 					lg: 'repeat(5, 1fr)',
 					xl: 'repeat(6, 1fr)',
-					'2xl': 'repeat(8, 1fr)',
+					'2xl': 'repeat(7, 1fr)',
 				}}
-				gap={[8, 12, 16]}
+				gap={[8, 12]}
 				my={{ base: '14', md: '24' }}
 			>
 				{Array.apply(null, { length: totalCh }).map((e, i) => (
